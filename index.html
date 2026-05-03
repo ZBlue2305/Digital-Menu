@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bluebell | Digital Menu</title>
+    <meta name="description" content="Experience the exquisite flavors of Bluebell Restaurant. A cinematic digital menu journey.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="en">
+    <!-- Floating Icons Layer -->
+    <div id="floating-icons-container"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">BLUEBELL</div>
+        <div class="nav-right">
+            <div class="category-nav">
+                <a href="#coffees" data-en="Coffee" data-ar="قهوة">Coffee</a>
+                <a href="#teas" data-en="Tea" data-ar="شاي">Tea</a>
+                <a href="#pastries" data-en="Pastries" data-ar="حلويات">Pastries</a>
+                <a href="#savory" data-en="Savory" data-ar="سناك">سناك</a>
+            </div>
+            <div class="lang-switch">
+                <button id="lang-btn-en" class="active">EN</button>
+                <button id="lang-btn-ar">AR</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1 data-en="The Art of Coffee" data-ar="فن القهوة">The Art of Coffee</h1>
+            <p data-en="A Five-Star Sensory Journey" data-ar="رحلة حسية بخمس نجوم">A Five-Star Sensory Journey</p>
+            <div class="scroll-indicator">
+                <span>EXPLORE MENU</span>
+                <div class="mouse"></div>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </header>
+
+    <!-- Menu Sections -->
+    <main id="menu-container">
+        <!-- Artisan Coffees -->
+        <section class="menu-section" id="coffees">
+            <div class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=2000')"></div>
+            <div class="section-content">
+                <h2 data-en="Artisan Coffees" data-ar="قهوة مختصة">Artisan Coffees</h2>
+                <div class="menu-grid">
+                    <div class="menu-item best-seller">
+                        <div class="item-info">
+                            <div class="badge" data-en="BEST SELLER" data-ar="الأكثر مبيعاً">BEST SELLER</div>
+                            <h3 data-en="Bluebell Blossom Latte" data-ar="لاتيه زهرة بلو بيل">Bluebell Blossom Latte</h3>
+                            <p data-en="Our signature espresso infused with delicate bluebell essence and lavender foam." data-ar="إسبريسو خاص منقوع بخلاصة زهرة بلو بيل الرقيقة ورغوة الخزامى.">Our signature espresso infused with delicate bluebell essence and lavender foam.</p>
+                        </div>
+                        <span class="price">18$</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 data-en="Bluebell Cold Brew" data-ar="كولد برو بلو بيل">Bluebell Cold Brew</h3>
+                            <p data-en="12-hour slow-steeped with lavender essence" data-ar="منقوع ببطء لمدة 12 ساعة مع خلاصة الخزامى">12-hour slow-steeped with lavender essence</p>
+                        </div>
+                        <span class="price">14$</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 data-en="Velvet Espresso" data-ar="إسبريسو مخملي">Velvet Espresso</h3>
+                            <p data-en="A bold, indigo-roasted blend with a silky, deep crema." data-ar="مزيج جريء محمص بلون النيلي مع رغوة عميقة وحريرية.">A bold, indigo-roasted blend with a silky, deep crema.</p>
+                        </div>
+                        <span class="price">10$</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 data-en="Saffron Flat White" data-ar="فلات وايت بالزعفران">Saffron Flat White</h3>
+                            <p data-en="Rich espresso with premium saffron-infused milk" data-ar="إسبريسو غني مع حليب بنكهة الزعفران الفاخر">Rich espresso with premium saffron-infused milk</p>
+                        </div>
+                        <span class="price">16$</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 data-en="Rose-Infused Latte" data-ar="لاتيه بالورد">Rose-Infused Latte</h3>
+                            <p data-en="Delicate rose petals steamed with organic espresso" data-ar="بتلات الورد الرقيقة المطهوة على البخار مع إسبريسو عضوي">Delicate rose petals steamed with organic espresso</p>
+                        </div>
+                        <span class="price">15$</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Signature Teas -->
+        <section class="menu-section" id="teas">
+            <div class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1576091160550-2173bdd99611?auto=format&fit=crop&q=80&w=2000')"></div>
+            <div class="section-content">
+                <h2 data-en="Signature Teas" data-ar="شاي فاخر">Signature Teas</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 data-en="Lavender Earl Grey" data-ar="إيرل جراي بالخزامى">Lavender Earl Grey</h3>
+                            <p data-en="Rare tea leaves with organic bluebell lavender" data-ar="أوراق شاي نادرة مع خزامى بلو بيل العضوي">Rare tea leaves with organic bluebell lavender</p>
+                        </div>
+                        <span class="price">12$</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 data-en="Silver Needle White" data-ar="إبرة الفضة البيضاء">Silver Needle White</h3>
+                            <p data-en="Delicate hand-picked white tea blossoms" data-ar="براعم الشاي الأبيض الرقيقة المقطوفة يدوياً">Delicate hand-picked white tea blossoms</p>
+                        </div>
+                        <span class="price">16$</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 data-en="Emerald Matcha Ceremony" data-ar="احتفال الماتشا الزمردي">Emerald Matcha Ceremony</h3>
+                            <p data-en="Ceremonial grade Uji matcha with velvet foam" data-ar="ماتشا أوجي احتفالية مع رغوة مخملية">Ceremonial grade Uji matcha with velvet foam</p>
+                        </div>
+                        <span class="price">20$</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pastries -->
+        <section class="menu-section" id="pastries">
+            <div class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1550617931-e17a7b70dce2?auto=format&fit=crop&q=80&w=2000')"></div>
+            <div class="section-content">
+                <h2 data-en="Exquisite Pastries" data-ar="معجنات راقية">Exquisite Pastries</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 data-en="Lavender Glazed Croissant" data-ar="كرواسون مغطى بالخزامى">Lavender Glazed Croissant</h3>
+                            <p data-en="Butter flaky layers with a sweet violet and lavender sugar glaze." data-ar="طبقات زبدة هشة مع طبقة سكر حلوة بالبنفسج والخزامى.">Butter flaky layers with a sweet violet and lavender sugar glaze.</p>
+                        </div>
+                        <span class="price">12$</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 data-en="Bluebell Macarons" data-ar="ماكرون بلو بيل">Bluebell Macarons</h3>
+                            <p data-en="Box of 6 signature lavender & blueberry macarons" data-ar="صندوق من 6 قطع ماكرون بالخزامى والتوت">Box of 6 signature lavender & blueberry macarons</p>
+                        </div>
+                        <span class="price">24$</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 data-en="Truffle Chocolate Tart" data-ar="تارت الشوكولاتة بالكمأ">Truffle Chocolate Tart</h3>
+                            <p data-en="Dark Valrhona chocolate with sea salt truffle" data-ar="شوكولاتة فالرونا الداكنة مع كمأة ملح البحر">Dark Valrhona chocolate with sea salt truffle</p>
+                        </div>
+                        <span class="price">15$</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 data-en="Pistachio Cloud Cake" data-ar="كعكة سحابة الفستق">Pistachio Cloud Cake</h3>
+                            <p data-en="Light sponge with roasted pistachio mousse" data-ar="إسفنجة خفيفة مع موس الفستق المحمص">Light sponge with roasted pistachio mousse</p>
+                        </div>
+                        <span class="price">18$</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Savory -->
+        <section class="menu-section" id="savory">
+            <div class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&q=80&w=2000')"></div>
+            <div class="section-content">
+                <h2 data-en="Savory Selections" data-ar="مختارات مالحة">Savory Selections</h2>
+                <div class="menu-grid">
+                    <div class="menu-item chef-choice">
+                        <div class="item-info">
+                            <div class="badge" data-en="CHEF'S CHOICE" data-ar="اختيار الشيف">CHEF'S CHOICE</div>
+                            <h3 data-en="Truffle Avocado Toast" data-ar="توست الأفوكادو بالكمأ">Truffle Avocado Toast</h3>
+                            <p data-en="A masterpiece of flavor: organic sourdough, creamy avocado, and rare truffle essence." data-ar="تحفة من النكهات: خبز العجين المخمر العضوي، الأفوكادو الكريمي، وخلاصة الكمأ النادرة.">A masterpiece of flavor: organic sourdough, creamy avocado, and rare truffle essence.</p>
+                        </div>
+                        <span class="price">22$</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 data-en="Wagyu Beef Brioche" data-ar="بريوش لحم واغيو">Wagyu Beef Brioche</h3>
+                            <p data-en="Slow-cooked Wagyu on toasted artisanal brioche" data-ar="لحم واغيو مطهو ببطء على بريوش حرفي محمص">Slow-cooked Wagyu on toasted artisanal brioche</p>
+                        </div>
+                        <span class="price">28$</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beverages -->
+        <section class="menu-section" id="drinks">
+            <div class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=2000')"></div>
+            <div class="section-content">
+                <h2 data-en="Exotic Beverages" data-ar="مشروبات غريبة">Exotic Beverages</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 data-en="Bluebell Mist Mocktail" data-ar="موكتيل ضباب بلو بيل">Bluebell Mist Mocktail</h3>
+                            <p data-en="Butterfly pea flower with citrus and sparkling violet mist." data-ar="زهرة البازلاء الفراشة مع الحمضيات وضباب بنفسجي فوار.">Butterfly pea flower with citrus and sparkling violet mist.</p>
+                        </div>
+                        <span class="price">16$</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 data-en="70% Dark Hot Chocolate" data-ar="شوكولاتة ساخنة داكنة 70%">70% Dark Hot Chocolate</h3>
+                            <p data-en="Single-origin cacao with lavender-infused cream" data-ar="كاكاو من مصدر واحد مع كريمة بنكهة الخزامى">Single-origin cacao with lavender-infused cream</p>
+                        </div>
+                        <span class="price">14$</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <h2 data-en="Connect With Us" data-ar="تواصل معنا">Connect With Us</h2>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="location" data-en="📍 123 Bluebell Lane, Luxury District" data-ar="📍 123 شارع بلو بيل، الحي الفاخر">📍 123 Bluebell Lane, Luxury District</p>
+            <p data-en="&copy; 2026 Bluebell Restaurant. Crafted for excellence." data-ar="&copy; 2026 مطعم بلو بيل. صُنع للتميز.">&copy; 2026 Bluebell Restaurant. Crafted for excellence.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

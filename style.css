@@ -1,0 +1,511 @@
+:root {
+    --primary: #1e1b4b; /* Deep Indigo */
+    --accent: #818cf8;  /* Bluebell Blue */
+    --accent-light: #c7d2fe; /* Lavender Mist */
+    --bg-dark: #020617; /* Midnight */
+    --text-light: #f8fafc;
+    --glass: rgba(30, 27, 75, 0.85);
+    --transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    overflow-x: hidden;
+    line-height: 1.6;
+    background-image: url('https://www.transparenttextures.com/patterns/black-linen.png'); /* Subtle texture */
+}
+
+body.ar {
+    direction: rtl;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fallback for Arabic */
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), transparent);
+    backdrop-filter: blur(5px);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.category-nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.category-nav a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    transition: var(--transition);
+    position: relative;
+}
+
+.category-nav a:hover, .category-nav a.active {
+    opacity: 1;
+    color: var(--accent);
+}
+
+.category-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accent);
+    transition: var(--transition);
+}
+
+.category-nav a:hover::after {
+    width: 100%;
+}
+
+.book-btn {
+    background: var(--accent);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.book-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 6px;
+    color: var(--accent);
+    text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+}
+
+.lang-switch {
+    display: flex;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.lang-switch button {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 6px 14px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: var(--transition);
+}
+
+.lang-switch button.active {
+    background: var(--accent);
+    color: var(--primary);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+/* Floating Icons Container */
+#floating-icons-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 50;
+    overflow: hidden;
+}
+
+.floating-icon {
+    position: absolute;
+    color: var(--accent-light);
+    opacity: 0.3;
+    font-size: 1.5rem;
+    transition: transform 0.1s ease-out;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('https://images.unsplash.com/photo-1513512213192-bc2fbd02e64b?auto=format&fit=crop&q=80&w=2000') center/cover no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 20%, var(--bg-dark) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: clamp(3.5rem, 12vw, 7rem);
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, #fff, var(--accent) 50%, #fff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 4s linear infinite, fadeInUp 1.5s ease-out;
+}
+
+@keyframes shine {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+
+.hero p {
+    font-size: 1.4rem;
+    letter-spacing: 4px;
+    font-style: italic;
+    opacity: 0.9;
+    color: var(--accent-light);
+    animation: fadeInUp 1.5s ease-out 0.3s backwards;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    opacity: 0.6;
+}
+
+.scroll-indicator span {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+}
+
+.mouse {
+    width: 25px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 20px;
+    position: relative;
+}
+
+.mouse::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 8px;
+    background: white;
+    border-radius: 2px;
+    animation: scrollMouse 2s infinite;
+}
+
+/* Menu Sections - Movie Scroll Effect */
+.menu-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    clip-path: inset(0 0 0 0); /* For background attachment replacement */
+}
+
+.section-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    transform: scale(1.1);
+    transition: transform 0.5s ease-out;
+}
+
+.section-content {
+    position: relative;
+    z-index: 20;
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 4rem;
+    border-radius: 40px;
+    width: 90%;
+    max-width: 1000px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+.menu-section.active .section-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu-section h2 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.menu-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--accent), transparent);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 4rem;
+    margin-top: 2rem;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Shine Effect on Hover */
+.menu-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(129, 140, 248, 0.2), transparent);
+    transform: skewX(-25deg);
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.menu-item:hover::before {
+    left: 150%;
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--accent);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(129, 140, 248, 0.1);
+}
+
+.badge {
+    font-size: 0.6rem;
+    font-weight: 800;
+    color: var(--primary);
+    background: var(--accent);
+    padding: 3px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    letter-spacing: 1.5px;
+}
+
+.item-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.7rem;
+    color: var(--accent-light);
+    transition: var(--transition);
+}
+
+.menu-item:hover .item-info h3 {
+    color: white;
+}
+
+.item-info p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent);
+    font-family: 'Playfair Display', serif;
+    position: relative;
+}
+
+.price::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    width: 20px;
+    height: 1px;
+    background: var(--accent);
+}
+
+body.ar .price::before {
+    right: auto;
+    left: 0;
+}
+
+/* Footer */
+footer {
+    padding: 6rem 0;
+    text-align: center;
+    background: var(--bg-dark);
+    position: relative;
+    z-index: 100;
+}
+
+.footer-content h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--accent);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.social-links a {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--accent);
+    transform: translateY(-5px);
+}
+
+.location {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scrollMouse {
+    0% { transform: translate(-50%, 0); opacity: 0; }
+    50% { transform: translate(-50%, 15px); opacity: 1; }
+    100% { transform: translate(-50%, 30px); opacity: 0; }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .category-nav {
+        display: none; /* Hide on mobile to save space */
+    }
+    
+    .nav-right {
+        gap: 1rem;
+    }
+
+    .section-content {
+        padding: 1.5rem;
+        border-radius: 20px;
+        width: 95%;
+    }
+
+    .menu-section h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .item-info h3 {
+        font-size: 1.1rem;
+    }
+
+    nav {
+        padding: 1.5rem 5%;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+}
