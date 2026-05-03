@@ -197,7 +197,7 @@ nav {
 }
 
 .hero h1 {
-    font-size: clamp(3.5rem, 12vw, 7rem);
+    font-size: clamp(2.5rem, 8vw, 6rem); /* More flexible font size */
     margin-bottom: 1.5rem;
     background: linear-gradient(to right, #fff, var(--accent) 50%, #fff);
     background-size: 200% auto;
@@ -306,7 +306,7 @@ nav {
 }
 
 .menu-section h2 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
     margin-bottom: 3rem;
     text-align: center;
     position: relative;
@@ -325,8 +325,8 @@ nav {
 
 .menu-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(clamp(280px, 30vw, 400px), 1fr));
+    gap: clamp(1.5rem, 4vw, 4rem);
     margin-top: 2rem;
 }
 
