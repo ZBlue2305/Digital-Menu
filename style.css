@@ -296,8 +296,8 @@ nav {
     max-width: 1000px;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     opacity: 0;
-    transform: translateY(50px);
-    transition: all 1s ease-out;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .menu-section.active .section-content {
@@ -479,7 +479,7 @@ footer {
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .category-nav {
-        display: none; /* Hide on mobile to save space */
+        display: none;
     }
     
     .nav-right {
@@ -487,22 +487,46 @@ footer {
     }
 
     .section-content {
-        padding: 1.5rem;
+        padding: 2.5rem 1.5rem;
         border-radius: 20px;
-        width: 95%;
+        width: 92%;
+        opacity: 1 !important; /* Force visibility on mobile */
+        transform: translateY(0) !important;
+        margin: 20px auto;
+    }
+
+    .menu-section {
+        height: auto;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding: 60px 0;
+        clip-path: none;
+    }
+
+    .section-bg {
+        position: absolute;
+        height: 100%;
+        transform: scale(1) !important;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .menu-item {
+        padding: 1.5rem;
     }
 
     .menu-section h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    .item-info h3 {
-        font-size: 1.1rem;
+        font-size: 2.2rem;
+        margin-bottom: 2.5rem;
     }
 
     nav {
-        padding: 1.5rem 5%;
+        padding: 1rem 5%;
+        background: var(--bg-dark); /* Solid background for mobile nav */
     }
 
     .logo {

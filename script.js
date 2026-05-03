@@ -30,15 +30,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Intersection Observer for Menu Sections
     const observerOptions = {
-        threshold: 0.2
+        threshold: 0.05, // Trigger earlier
+        rootMargin: '0px 0px -50px 0px' // Trigger slightly before it enters the viewport
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-            } else {
-                entry.target.classList.remove('active');
             }
         });
     }, observerOptions);
