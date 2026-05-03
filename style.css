@@ -295,8 +295,8 @@ nav {
     width: 90%;
     max-width: 1000px;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    transform: translateY(30px);
+    opacity: 1; /* Ensure visibility by default */
+    transform: translateY(0);
     transition: opacity 1s ease-out, transform 1s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
